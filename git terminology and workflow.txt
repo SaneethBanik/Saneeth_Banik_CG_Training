@@ -1,0 +1,51 @@
+$git --version						:shows the version of git 
+$git --help config					:displays the manual page/the help page for the command following it
+$git init						:this command initializes the directory
+$git status						:to show the status of the file if its in staging area or not 
+$git add <filename>					:to add folder in the current git directory
+$git remote add origin <github_repository_link>		:this add the github repository as the origin remote repository
+$git commit -m 'any text'				:commits the staged files into the local repository
+$git log						:shows the log of all the commit history 
+$git difftool						:displays the difference between local changes and previous versions 
+							 of the file
+$git pull						:pulls files from the remote repository
+$git clone						:clones all the files in the remote repository to the local machine
+$touch <filename>					:creates a file in the current directory
+$git add .						:adds all the folders which are un-tracked into the staging area
+$git add *.<extension>					:in this format of git add the files with the extension 
+							 mentioned are only added to the stagin area
+$git remote						:displays a list of repositories 
+$git reset 						:goes back to a previous state when the last commit was done
+
+Git has three main states that the files can reside in, modified, staged and comitted
+>Modified means that you have changed the file but have not committed it to your database yet.
+>Staged means that you have marked a modified file in its current version to go into your next commit snapshot.
+>Committed means that the data is safely stored in your local database.
+
+The three main sections of Git:
+>The Working Directory which is the current location where all the files are edited and saved by the user. 
+ Files are added from this stage to the next stage.
+>The Staging Area, it stores the information or files that will be present in the users next commit.
+>The Git Directory, this is where git stores the data of the files that have been committed from the staging area.
+
+The process of committing a file to a git repository:
+1> Files in the working directory which have to be committed have to be added to the staging area using the command
+   git add <filename> :if a specific file has to be added to the staging area or git add . to add all the files in 
+   the current directory to the staging area
+2> In the staging the files are converted to tracked files from un-tracked files, to commit files into the local,
+   repository the command git commit is used it commits all the files in the staging area to the local repository
+   here in the local repository all the files are stored in the local system.
+3> To add files from the local repository to the remote repository the command git push is used where the files from
+   the local repository is pushed to the specified remote repository.
+
+Branching in Git:
+$git branch <branch_name>				:to create a new branch 
+$git checkout <branch_name>				:to move to the specified branch name
+$git merge <branch_name>				:to merge a specified branch to the current directory in 
+							 which the user is present
+$git rebase						:this command attaches the branch of any directory to the newest update 
+							 of the directory 
+
+making changes in a specific commit: git rebase -i HEAD~<number of positions from head>
+this operates on the number of positions specified from the head if the number is 2 then will display and will let the user edit 
+and make changes to the 2 commits done before the HEAD. It helps in changing wordings and editing of commited files.
